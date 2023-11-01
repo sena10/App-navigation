@@ -1,107 +1,177 @@
 import React from 'react';
-import { View, Text, Button, TouchableOpacity, Image, FlatList, StyleSheet, Alert } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, Alert, ScrollView } from 'react-native';
 
-const Home = ({ navigation }) => {
-  const options = [
-    { id: 1, title: 'Casa', image: 'https://img.icons8.com/color/70/000000/cottage.png' },
-    { id: 1, title: 'Pessoa', image: 'https://img.icons8.com/color/70/000000/administrator-male.png' },
-    { id: 2, title: 'Curtidas', image: 'https://img.icons8.com/color/70/000000/filled-like.png' },
-    { id: 3, title: 'Curti', image: 'https://img.icons8.com/color/70/000000/facebook-like.png' },
-    { id: 4, title: 'Desligar', image: 'https://img.icons8.com/color/70/000000/shutdown.png' },
-    { id: 5, title: 'Carros', image: 'https://img.icons8.com/color/70/000000/traffic-jam.png' },
-    { id: 6, title: 'Video Gamer', image: 'https://img.icons8.com/dusk/70/000000/visual-game-boy.png' },
-    { id: 8, title: 'Fazenda', image: 'https://img.icons8.com/flat_round/70/000000/cow.png' },
-    { id: 9, title: 'Programação', image: 'https://img.icons8.com/color/70/000000/coworking.png' },
-    { id: 9, title: 'Configurações', image: 'https://img.icons8.com/nolan/70/000000/job.png' },
-  ];
-
-  const clickEventListener = () => {
+export default Page2 = ({ navigation }) => {{
+    Alert.alert('adicionado ao carrinho com sucesso')
+  }
+  const goToPage6 = () => {
     navigation.navigate('Page3');
   };
 
-
-
   return (
    
-
-      <FlatList
-        style={styles.list}
-        contentContainerStyle={styles.listContainer}
-        data={options}
-        horizontal={false}
-        numColumns={2}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => {
-          return (
-            <View>
-              <TouchableOpacity style={styles.card} onPress={() => clickEventListener(item)}>
-                <Image style={styles.cardImage} source={{ uri: item.image }} />
-              </TouchableOpacity>
-
-              <View style={styles.cardHeader}>
-                <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Text style={styles.title}>{item.title}</Text>
-                </View>
-              </View>
-            </View>
-          );
-        }}
-      />
-    
-  );
-};
+    <View style={styles.container}>
+      <ScrollView>
+        <View style={{ alignItems: 'center', marginHorizontal: 30 }}>
+          <Image
+            style={styles.productImg}
+            source={{
+              uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3v7KDJN7TAoJa5sFaPWcp1HX8JFcpF3z5K3ngz4L6kWoEP7Ca',
+            }}
+          />
+          <Text style={styles.name}>Camisa moleton</Text>
+          <Text style={styles.price}>R$ 40,00</Text>
+          <Text style={styles.description}>
+            Esta camisa é de otima qualidade tecido de algodão sintetizado com fibras de nailon e com um toque sutil de poliester em sua fabricação
+          </Text>
+        </View>
+        <View style={styles.starContainer}>
+          <Image
+            style={styles.star}
+            source={{ uri: 'https://img.icons8.com/color/40/000000/star.png' }}
+          />
+          <Image
+            style={styles.star}
+            source={{ uri: 'https://img.icons8.com/color/40/000000/star.png' }}
+          />
+          <Image
+            style={styles.star}
+            source={{ uri: 'https://img.icons8.com/color/40/000000/star.png' }}
+          />
+          <Image
+            style={styles.star}
+            source={{ uri: 'https://img.icons8.com/color/40/000000/star.png' }}
+          />
+          <Image
+            style={styles.star}
+            source={{ uri: 'https://img.icons8.com/color/40/000000/star.png' }}
+          />
+        </View>
+        <View style={styles.contentColors}>
+          <TouchableOpacity
+            style={[styles.btnColor, { backgroundColor: '#00BFFF' }]}></TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.btnColor, { backgroundColor: '#FF1493' }]}></TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.btnColor, { backgroundColor: '#00CED1' }]}></TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.btnColor, { backgroundColor: '#228B22' }]}></TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.btnColor, { backgroundColor: '#20B2AA' }]}></TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.btnColor, { backgroundColor: '#FF4500' }]}></TouchableOpacity>
+        </View>
+        <View style={styles.contentSize}>
+          <TouchableOpacity style={styles.btnSize}>
+            <Text>S</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btnSize}>
+            <Text>M</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btnSize}>
+            <Text>L</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btnSize}>
+            <Text>XL</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.separator}></View>
+        <View style={styles.addToCarContainer}>
+          <TouchableOpacity style={styles.shareButton} onPress={goToPage6}>
+            <Text style={styles.shareButtonText}>Compre agora!</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </View>
+  )
+          }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 40,
-    backgroundColor: '#f6f6f6',
+    marginTop: 20,
   },
-  list: {
-    paddingHorizontal: 5,
-    backgroundColor: '#f6f6f6',
+  productImg: {
+    width: 200,
+    height: 200,
   },
-  listContainer: {
-    alignItems: 'center',
+  name: {
+    fontSize: 28,
+    color: '#696969',
+    fontWeight: 'bold',
   },
-  card: {
-    shadowColor: '#474747',
-    shadowOffset: {
-      width: 0,
-      height: 6,
-    },
-    shadowOpacity: 0.37,
-    shadowRadius: 7.49,
-    elevation: 12,
-    marginVertical: 20,
-    marginHorizontal: 40,
-    backgroundColor: '#e2e2e2',
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  cardHeader: {
-    paddingVertical: 17,
-    paddingHorizontal: 16,
-    borderTopLeftRadius: 1,
-    borderTopRightRadius: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  cardImage: {
-    height: 50,
-    width: 50,
-    alignSelf: 'center',
-  },
-  title: {
+  price: {
+    marginTop: 10,
     fontSize: 18,
-    flex: 1,
-    alignSelf: 'center',
+    color: 'green',
+    fontWeight: 'bold',
+  },
+  description: {
+    textAlign: 'center',
+    marginTop: 10,
     color: '#696969',
   },
-});
+  star: {
+    width: 40,
+    height: 40,
+  },
+  btnColor: {
+    height: 30,
+    width: 30,
+    borderRadius: 30,
+    marginHorizontal: 3,
+  },
+  btnSize: {
+    height: 40,
+    width: 40,
+    borderRadius: 40,
+    borderColor: '#778899',
+    borderWidth: 1,
+    marginHorizontal: 3,
+    backgroundColor: 'white',
 
-export default Home;
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  starContainer: {
+    justifyContent: 'center',
+    marginHorizontal: 30,
+    flexDirection: 'row',
+    marginTop: 20,
+  },
+  contentColors: {
+    justifyContent: 'center',
+    marginHorizontal: 30,
+    flexDirection: 'row',
+    marginTop: 20,
+  },
+  contentSize: {
+    justifyContent: 'center',
+    marginHorizontal: 30,
+    flexDirection: 'row',
+    marginTop: 20,
+  },
+  separator: {
+    height: 2,
+    backgroundColor: '#eeeeee',
+    marginTop: 20,
+    marginHorizontal: 30,
+  },
+  shareButton: {
+    marginTop: 10,
+    height: 45,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 30,
+    backgroundColor: '#00BFFF',
+  },
+  shareButtonText: {
+    color: '#FFFFFF',
+    fontSize: 20,
+  },
+  addToCarContainer: {
+    marginHorizontal: 30,
+  },
+})

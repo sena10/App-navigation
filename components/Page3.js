@@ -5,10 +5,10 @@ import { View, Text, Button, StyleSheet } from 'react-native';
 const Page3 = ({ navigation }) => {
   // Dados do Invoice
   const invoiceData = {
-    invoiceNumber: '12345',
-    invoiceDate: '01/01/2022',
-    dueDate: '01/15/2022',
-    amountDue: '$100.00',
+    invoiceNumber: '*****',
+    invoiceDate: '*****',
+    dueDate: '*****',
+    amountDue: '*****',
   };
 
   return (
@@ -17,15 +17,20 @@ const Page3 = ({ navigation }) => {
   
       {/* Invoice */}
       <View style={styles.invoiceContainer}>
-        <Text style={styles.invoiceHeader}>SUA FATURA</Text>
-        <Text style={styles.label}>NUMERO DA IDENTIFICAÇÃO:</Text>
+        <Text style={styles.invoiceHeader}>Endereço</Text>
+        <Text style={styles.label}>NUMERO DA IDENTIFICAÇÃO DO PEDIDO</Text>
         <Text style={styles.value}>{invoiceData.invoiceNumber}</Text>
-        <Text style={styles.label}>DIA DA FATURA:</Text>
+        <Text style={styles.label}>CEP</Text>
         <Text style={styles.value}>{invoiceData.invoiceDate}</Text>
-        <Text style={styles.label}>DIA DO VENCIMENTO:</Text>
+        <Text style={styles.label}>Estado</Text>
         <Text style={styles.value}>{invoiceData.dueDate}</Text>
-        <Text style={styles.label}>VALOR:</Text>
+        <Text style={styles.label}>Capital</Text>
         <Text style={styles.value}>{invoiceData.amountDue}</Text>
+        <Text style={styles.label}>Número da casa</Text>
+        <Text style={styles.value}>{invoiceData.amountDue}</Text>
+        <Text style={styles.label}>Telefone</Text>
+        <Text style={styles.value}>{invoiceData.amountDue}</Text>
+        
         <Button
           style={styles.button}
           title="COMPARTILHAR"
